@@ -39,7 +39,7 @@ export default function BookList({ books, updateBookDetails, updateBookStatus })
   };
 
   return (
-    <div className="h-full flex flex-col space-y-4 overflow-hidden">
+    <div className="lg:h-full flex flex-col space-y-4 lg:overflow-hidden">
       <div className="flex justify-between items-end shrink-0">
         <h2 className="text-xl font-extrabold text-emerald-900 ml-2 hidden md:block">Okuma Listem</h2>
         <div className="relative w-full md:w-96">

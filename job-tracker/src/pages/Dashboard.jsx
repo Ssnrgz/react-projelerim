@@ -22,7 +22,7 @@ export default function Dashboard() {
 
   return (
     // pt-4 (üstten çok az boşluk) ve pb-12 (alttan fazla boşluk) ile her şey YUKARI taşındı
-    <div className="w-[95%] max-w-[1400px] mx-auto pt-3 pb-12 h-screen flex flex-col overflow-hidden">
+    <div className="w-[95%] max-w-[1400px] mx-auto pt-3 pb-12 lg:h-screen flex flex-col lg:overflow-hidden">
       
       {/* mb-4 yapılarak başlığın altındaki boşluk da hafifçe kısıldı */}
       <h1 className="text-2xl lg:text-3xl font-extrabold text-center text-indigo-900 mb-4 tracking-tight shrink-0">
@@ -38,7 +38,7 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div className="flex-1 min-h-0">
+      <div className="flex-1 min-h-0 lg:overflow-hidden flex flex-col">
         <JobList jobs={jobs} deleteJob={deleteJob} updateJobStatus={updateJobStatus} />
       </div>
     </div>

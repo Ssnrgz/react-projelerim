@@ -48,7 +48,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="w-[95%] max-w-[1500px] mx-auto py-6 h-screen flex flex-col overflow-hidden relative">
+    <div className="w-[95%] max-w-[1500px] mx-auto py-6 lg:h-screen flex flex-col lg:overflow-hidden relative">
       
       {/* BAŞLIK ALANI: Başlık tam yerinde (solda) bırakıldı */}
       <div className="flex items-center mb-6 shrink-0 bg-white/50 p-4 rounded-2xl border border-emerald-100 shadow-sm">
@@ -56,14 +56,14 @@ export default function Dashboard() {
       </div>
       
       {/* ANA İÇERİK ALANI */}
-      <div className="flex-1 min-h-0 flex flex-col lg:flex-row gap-6 overflow-hidden">
+      <div className="flex-1 min-h-0 flex flex-col lg:flex-row gap-6 lg:overflow-hidden">
         
-        <div className="w-full lg:w-[300px] xl:w-[320px] shrink-0 h-full flex flex-col gap-4 overflow-hidden">
+        <div className="w-full lg:w-[300px] xl:w-[320px] shrink-0 lg:h-full flex flex-col gap-4 lg:overflow-hidden">
           <BookForm addBook={addBook} books={books} />
           <BookStats books={books} />
         </div>
 
-        <div className="flex-1 min-w-0 h-full flex flex-col overflow-hidden">
+        <div className="flex-1 min-w-0 lg:h-full flex flex-col lg:overflow-hidden">
           <BookList books={books} updateBookDetails={updateBookDetails} updateBookStatus={updateBookStatus} />
         </div>
 

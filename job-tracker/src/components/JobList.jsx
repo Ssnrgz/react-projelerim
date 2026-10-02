@@ -27,7 +27,7 @@ export default function JobList({ jobs, deleteJob, updateJobStatus }) {
   };
 
   return (
-    <div className="h-full flex flex-col space-y-4 overflow-hidden">
+    <div className="lg:h-full flex flex-col space-y-4 lg:overflow-hidden">
       
       <div className="flex justify-between items-end shrink-0">
         <h2 className="text-xl font-bold text-indigo-900 ml-2 hidden md:block drop-shadow-sm">Başvuru Listesi</h2>
