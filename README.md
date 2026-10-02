@@ -7,10 +7,10 @@ Bu depo, React, Vite ve Tailwind CSS kullanılarak geliştirilmiş kişisel taki
 ### 1. 📚 Dijital Kütüphanem (`book-tracker-app`)
 Okuduğunuz veya okumayı planladığınız kitapları takip edebileceğiniz bir dijital kütüphane uygulaması.
 
-**🔗 Canlı Demo:** [Uygulamayı Deneyin (Buraya Vercel/Netlify linki gelecek)](#)
+**🔗 Canlı Demo:** https://react-projelerim.vercel.app/
 
-*<!-- BURAYA DİJİTAL KÜTÜPHANE İLE İLGİLİ EKRAN GÖRÜNTÜSÜ GELECEK -->*
-*![Dijital Kütüphanem Ekran Görüntüsü](assets/book-tracker-demo.png)*
+<img width="1850" height="960" alt="Screenshot" src="https://github.com/user-attachments/assets/53de0fa0-2301-4458-9647-1cc93e7975bb" />
+
 
 - **Özellikler:**
   - Yeni kitap ekleme (Kitap Adı, Yazar, Yayınevi, Sayfa Sayısı).
@@ -23,10 +23,10 @@ Okuduğunuz veya okumayı planladığınız kitapları takip edebileceğiniz bir
 ### 2. 💼 İş Başvurusu Takip Sistemi (`job-tracker`)
 İş arama sürecinizi kolaylaştırmak ve yaptığınız başvuruları düzenli bir şekilde takip edebilmek için tasarlanmış uygulama.
 
-**🔗 Canlı Demo:** [Uygulamayı Deneyin (Buraya Vercel/Netlify linki gelecek)](#)
+**🔗 Canlı Demo:** https://react-projelerim-mfyh.vercel.app
 
-*<!-- BURAYA İŞ BULMA TAKİP SİSTEMİ İLE İLGİLİ EKRAN GÖRÜNTÜSÜ GELECEK -->*
-*![İş Başvurusu Takip Ekran Görüntüsü](assets/job-tracker-demo.png)*
+<img width="1847" height="967" alt="screenshot" src="https://github.com/user-attachments/assets/499cdd99-9613-4027-9204-6a988794f1ec" />
+
 
 - **Özellikler:**
   - Yeni iş başvurusu ekleme (Şirket, Pozisyon, Başvuru Tarihi).
