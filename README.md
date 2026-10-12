@@ -13,11 +13,18 @@ Okuduğunuz veya okumayı planladığınız kitapları takip edebileceğiniz bir
 
 
 - **Özellikler:**
-  - Yeni kitap ekleme (Kitap Adı, Yazar, Yayınevi, Sayfa Sayısı).
-  - Kitap durumlarını güncelleme (Okunması Planlanıyor, Okunuyor, Bitti).
-  - Başlangıç ve bitiş tarihlerini otomatik takip etme.
-  - Kitaplar arasında arama yapma.
-  - Okuma durumlarına göre otomatik dağılım grafiği.
+  - **Sekmeli Arayüz:** "📚 Kütüphanem" ve "👤 Profilim" sekmeleri arasında kolay geçiş.
+  - **Kütüphanem Sekmesi:** Yeni kitap ekleme, liste üzerinden kitap arama, düzenleme ve okuma durumu güncelleme.
+  - **Profilim Sekmesi:**
+    - Okunan kitap sayısı, aktif okunan kitaplar ve toplam okunan sayfa istatistikleri.
+    - Kütüphane tamamlama ilerleme çubuğu.
+    - Özelleştirilebilir profil adı.
+  - **Beğenilen Alıntılar Alanı:**
+    - Kitaplardan unutulmaz cümleleri ve alıntıları kaydetme.
+    - Kütüphanedeki kitaplardan veya serbest kitap/yazar ismiyle alıntı ekleme, sayfa ve kategori belirtme.
+    - Alıntılar arasında arama yapma ve tek tıkla panoya kopyalama.
+  - **Okuma Dağılımı Grafiği:** Kitapların durumuna göre dinamik pasta grafik.
+  - **Mobil Uyumlu (Responsive):** Telefondan ve masaüstünden tam uyumlu kullanım.
 
 ---
 
