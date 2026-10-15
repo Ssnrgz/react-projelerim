@@ -7,9 +7,11 @@ Bu depo, React, Vite ve Tailwind CSS kullanılarak geliştirilmiş kişisel taki
 ### 1. 📚 Dijital Kütüphanem (`book-tracker-app`)
 Okuduğunuz veya okumayı planladığınız kitapları takip edebileceğiniz bir dijital kütüphane uygulaması.
 
-**🔗 Canlı Demo:** https://react-projelerim.vercel.app/
+**🔗 Canlı Demo:** https://react-projelerim-qxr8487j9-jenje.vercel.app/
 
-<img width="1850" height="960" alt="Screenshot" src="https://github.com/user-attachments/assets/53de0fa0-2301-4458-9647-1cc93e7975bb" />
+<img width="1850" height="954" alt="Screenshot from 2026-10-16 00-50-24" src="https://github.com/user-attachments/assets/ff924bd9-070e-4da9-817e-fd46074fbfa5" />
+<img width="1850" height="954" alt="Screenshot from 2026-10-16 00-50-17" src="https://github.com/user-attachments/assets/e3793c2b-166e-404e-97e0-24733ec8c510" />
+
 
 
 - **Özellikler:**
