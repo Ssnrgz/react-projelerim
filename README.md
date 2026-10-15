@@ -9,10 +9,8 @@ Okuduğunuz veya okumayı planladığınız kitapları takip edebileceğiniz bir
 
 **🔗 Canlı Demo:** https://react-projelerim-qxr8487j9-jenje.vercel.app/
 
-<img width="1850" height="954" alt="Screenshot from 2026-10-16 00-50-24" src="https://github.com/user-attachments/assets/ff924bd9-070e-4da9-817e-fd46074fbfa5" />
 <img width="1850" height="954" alt="Screenshot from 2026-10-16 00-50-17" src="https://github.com/user-attachments/assets/e3793c2b-166e-404e-97e0-24733ec8c510" />
-
-
+<img width="1850" height="954" alt="Screenshot from 2026-10-16 00-50-24" src="https://github.com/user-attachments/assets/ff924bd9-070e-4da9-817e-fd46074fbfa5" />
 
 - **Özellikler:**
   - **Sekmeli Arayüz:** "📚 Kütüphanem" ve "👤 Profilim" sekmeleri arasında kolay geçiş.
