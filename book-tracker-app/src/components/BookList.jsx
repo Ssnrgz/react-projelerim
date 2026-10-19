@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
-// deleteBook buradan da kaldırıldı
-export default function BookList({ books, updateBookDetails, updateBookStatus }) {
+export default function BookList({ books, updateBookDetails, updateBookStatus, deleteBook }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [editingId, setEditingId] = useState(null);
   const [editData, setEditData] = useState({});
@@ -15,8 +14,8 @@ export default function BookList({ books, updateBookDetails, updateBookStatus })
   }
 
   const filteredBooks = books.filter((book) =>
-    book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    book.author.toLowerCase().includes(searchTerm.toLowerCase())
+    (book.title || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+    (book.author || '').toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const getStatusColor = (status) => {
@@ -36,6 +35,17 @@ export default function BookList({ books, updateBookDetails, updateBookStatus })
   const handleEditSave = (id) => {
     updateBookDetails(id, editData);
     setEditingId(null);
+  };
+
+  const handleRemoveFromShelf = (book) => {
+    if (window.confirm(`"${book.title}" adlı kitabı kütüphanenizden (raftan) kaldırmak istediğinize emin misiniz?`)) {
+      if (deleteBook) {
+        deleteBook(book.id);
+      }
+      if (editingId === book.id) {
+        setEditingId(null);
+      }
+    }
   };
 
   return (
@@ -58,13 +68,13 @@ export default function BookList({ books, updateBookDetails, updateBookStatus })
           <table className="w-full text-left border-separate border-spacing-0 whitespace-nowrap lg:whitespace-normal">
             <thead className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white sticky top-0 z-10">
               <tr className="text-xs uppercase tracking-wider font-bold">
-                <th className="p-4 w-[20%]">Kitap Adı</th>
-                <th className="p-4 w-[15%]">Yazar</th>
-                <th className="p-4 w-[15%]">Yayın / Sayfa</th>
-                <th className="p-4 w-[12%]">Başlama</th>
-                <th className="p-4 w-[12%]">Bitiş</th>
-                <th className="p-4 w-[16%]">Durum</th>
-                <th className="p-4 text-center w-[10%]">İşlem</th>
+                <th className="p-4 w-[18%]">Kitap Adı</th>
+                <th className="p-4 w-[14%]">Yazar</th>
+                <th className="p-4 w-[13%]">Yayın / Sayfa</th>
+                <th className="p-4 w-[11%]">Başlama</th>
+                <th className="p-4 w-[11%]">Bitiş</th>
+                <th className="p-4 w-[15%]">Durum</th>
+                <th className="p-4 text-center w-[18%]">İşlem</th>
               </tr>
             </thead>
             <tbody className="bg-white">
@@ -101,7 +111,17 @@ export default function BookList({ books, updateBookDetails, updateBookStatus })
                           </select>
                         </td>
                         <td className="p-3 text-center border-b border-emerald-50">
-                          <button onClick={() => handleEditSave(book.id)} className="bg-teal-500 text-white px-2 py-2 rounded-lg font-bold shadow-sm hover:bg-teal-600 transition-all text-xs w-full">Kaydet</button>
+                          <div className="flex items-center justify-center gap-1.5">
+                            <button onClick={() => handleEditSave(book.id)} className="bg-teal-500 hover:bg-teal-600 text-white px-2.5 py-1.5 rounded-lg font-bold shadow-sm transition-all text-xs">
+                              Kaydet
+                            </button>
+                            <button onClick={() => setEditingId(null)} className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-2 py-1.5 rounded-lg font-bold transition-all text-xs">
+                              İptal
+                            </button>
+                            <button onClick={() => handleRemoveFromShelf(book)} className="bg-rose-50 hover:bg-rose-600 text-rose-700 hover:text-white px-2 py-1.5 rounded-lg font-bold transition-all text-xs border border-rose-200" title="Raftan Kaldır">
+                              Raftan Kaldır
+                            </button>
+                          </div>
                         </td>
                       </>
                     ) : (
@@ -122,11 +142,16 @@ export default function BookList({ books, updateBookDetails, updateBookStatus })
                           </select>
                         </td>
                         
-                        {/* SADECE DÜZENLE BUTONU KALDI */}
+                        {/* DÜZENLE VE RAFTAN KALDIR BUTONLARI */}
                         <td className="p-3 text-center border-b border-emerald-50">
-                            <button onClick={() => handleEditStart(book)} className="px-3 py-2 bg-indigo-50 text-indigo-600 hover:bg-indigo-500 hover:text-white rounded-lg transition-all font-bold text-xs shadow-sm border border-indigo-100 hover:border-indigo-500 w-full">
+                          <div className="flex items-center justify-center gap-1.5">
+                            <button onClick={() => handleEditStart(book)} className="px-2.5 py-1.5 bg-indigo-50 text-indigo-700 hover:bg-indigo-600 hover:text-white rounded-lg transition-all font-bold text-xs shadow-sm border border-indigo-100 hover:border-indigo-600">
                               Düzenle
                             </button>
+                            <button onClick={() => handleRemoveFromShelf(book)} className="px-2.5 py-1.5 bg-rose-50 text-rose-700 hover:bg-rose-600 hover:text-white rounded-lg transition-all font-bold text-xs shadow-sm border border-rose-100 hover:border-rose-600" title="Kitabı Kütüphaneden Sil">
+                              Raftan Kaldır
+                            </button>
+                          </div>
                         </td>
                         
                       </>

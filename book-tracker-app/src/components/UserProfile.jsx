@@ -109,7 +109,7 @@ export default function UserProfile({ books }) {
     }
 
     const newQuote = {
-      id: crypto.randomUUID(),
+      id: (typeof crypto !== 'undefined' && crypto.randomUUID) ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).substring(2),
       text: quoteText.trim(),
       bookTitle: finalTitle,
       author: author.trim() || 'Anonim',
