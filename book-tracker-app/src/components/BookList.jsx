@@ -4,6 +4,7 @@ export default function BookList({ books, updateBookDetails, updateBookStatus, d
   const [searchTerm, setSearchTerm] = useState('');
   const [editingId, setEditingId] = useState(null);
   const [editData, setEditData] = useState({});
+  const [bookToDelete, setBookToDelete] = useState(null);
 
   if (books.length === 0) {
     return (
@@ -38,18 +39,58 @@ export default function BookList({ books, updateBookDetails, updateBookStatus, d
   };
 
   const handleRemoveFromShelf = (book) => {
-    if (window.confirm(`"${book.title}" adlı kitabı kütüphanenizden (raftan) kaldırmak istediğinize emin misiniz?`)) {
-      if (deleteBook) {
-        deleteBook(book.id);
-      }
-      if (editingId === book.id) {
-        setEditingId(null);
-      }
+    setBookToDelete(book);
+  };
+
+  const confirmDelete = () => {
+    if (bookToDelete && deleteBook) {
+      deleteBook(bookToDelete.id);
     }
+    if (editingId && bookToDelete && editingId === bookToDelete.id) {
+      setEditingId(null);
+    }
+    setBookToDelete(null);
   };
 
   return (
-    <div className="lg:h-full flex flex-col space-y-4 lg:overflow-hidden">
+    <>
+      {/* UYGULAMA İÇİ ÖZEL ONAY MODAL'I */}
+      {bookToDelete && (
+        <div className="fixed inset-0 z-[70] flex items-center justify-center bg-emerald-950/40 backdrop-blur-sm p-4 transition-all">
+          <div className="bg-white p-7 sm:p-8 rounded-3xl shadow-2xl flex flex-col items-center max-w-sm w-full border border-emerald-100 text-center transform scale-100 transition-all">
+            <div className="w-16 h-16 rounded-2xl bg-rose-50 text-rose-500 flex items-center justify-center text-3xl mb-4 shadow-sm border border-rose-100">
+              🗑️
+            </div>
+            
+            <h3 className="text-xl font-black text-emerald-950 mb-2">
+              Raftan Kaldırılsın mı?
+            </h3>
+            
+            <p className="text-sm font-medium text-emerald-800 mb-6 leading-relaxed">
+              <span className="font-extrabold text-emerald-950">"{bookToDelete.title}"</span> adlı kitabı kütüphanenizden kaldırmak istediğinize emin misiniz?
+            </p>
+
+            <div className="grid grid-cols-2 gap-3 w-full">
+              <button
+                type="button"
+                onClick={() => setBookToDelete(null)}
+                className="w-full py-3 px-4 rounded-xl font-extrabold text-sm text-gray-700 bg-gray-100 hover:bg-gray-200 transition-all"
+              >
+                Vazgeç
+              </button>
+              <button
+                type="button"
+                onClick={confirmDelete}
+                className="w-full py-3 px-4 rounded-xl font-extrabold text-sm text-white bg-rose-600 hover:bg-rose-700 shadow-md hover:shadow-rose-600/30 transition-all"
+              >
+                Evet, Kaldır
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <div className="lg:h-full flex flex-col space-y-4 lg:overflow-hidden">
       <div className="flex justify-between items-end shrink-0">
         <h2 className="text-xl font-extrabold text-emerald-900 ml-2 hidden md:block">Okuma Listem</h2>
         <div className="relative w-full md:w-96">
@@ -166,5 +207,6 @@ export default function BookList({ books, updateBookDetails, updateBookStatus, d
         </div>
       </div>
     </div>
+    </>
   );
 }
