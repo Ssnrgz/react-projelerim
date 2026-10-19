@@ -7,7 +7,7 @@ export default function UserProfile({ books }) {
     if (saved) {
       try {
         return JSON.parse(saved);
-      } catch (e) {
+      } catch {
         return [];
       }
     }
