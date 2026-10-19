@@ -72,10 +72,6 @@ export default function UserProfile({ books }) {
     return sum + (isNaN(p) ? 0 : p);
   }, 0);
 
-  const completionPercentage = totalBooks > 0 
-    ? Math.round((completedCount / totalBooks) * 100) 
-    : 0;
-
   // Kitap seçiminde yazar otomatik doldurma
   const handleBookSelect = (e) => {
     const val = e.target.value;
@@ -217,20 +213,6 @@ export default function UserProfile({ books }) {
                   Kütüphanede {totalBooks} kitap kayıtlı
                 </span>
               </div>
-            </div>
-          </div>
-
-          {/* İlerleme Çubuğu */}
-          <div className="sm:w-64 bg-emerald-50/70 p-4 rounded-2xl border border-emerald-100">
-            <div className="flex justify-between items-center text-xs font-bold text-emerald-900 mb-1.5">
-              <span>Kütüphane Tamamlama</span>
-              <span>%{completionPercentage}</span>
-            </div>
-            <div className="w-full bg-emerald-200/60 rounded-full h-2.5 overflow-hidden">
-              <div 
-                className="bg-gradient-to-r from-teal-500 to-emerald-500 h-2.5 rounded-full transition-all duration-500"
-                style={{ width: `${completionPercentage}%` }}
-              ></div>
             </div>
           </div>
         </div>
