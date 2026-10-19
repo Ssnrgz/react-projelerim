@@ -14,18 +14,15 @@ Okuduğunuz veya okumayı planladığınız kitapları takip edebileceğiniz bir
 
 - **Özellikler:**
   - **Sekmeli Arayüz:** "📚 Kütüphanem" ve "👤 Profilim" sekmeleri arasında kolay geçiş.
-  - **Kütüphanem Sekmesi:** Yeni kitap ekleme, liste üzerinden kitap arama, düzenleme ve okuma durumu güncelleme.
+  - **Kütüphanem Sekmesi:** Yeni kitap ekleme, liste üzerinden kitap arama, düzenleme, silme ve okuma durumu güncelleme.
   - **Profilim Sekmesi:**
     - Okunan kitap sayısı, aktif okunan kitaplar ve toplam okunan sayfa istatistikleri.
-    - Kütüphane tamamlama ilerleme çubuğu.
     - Özelleştirilebilir profil adı.
   - **Beğenilen Alıntılar Alanı:**
     - Kitaplardan unutulmaz cümleleri ve alıntıları kaydetme.
     - Kütüphanedeki kitaplardan veya serbest kitap/yazar ismiyle alıntı ekleme, sayfa ve kategori belirtme.
     - Alıntılar arasında arama yapma ve tek tıkla panoya kopyalama.
   - **Okuma Dağılımı Grafiği:** Kitapların durumuna göre dinamik pasta grafik.
-  - **Mobil Uyumlu (Responsive):** Telefondan ve masaüstünden tam uyumlu kullanım.
-
 ---
 
 ### 2. 💼 İş Başvurusu Takip Sistemi (`job-tracker`)
